@@ -41,7 +41,7 @@ WORKDIR /srv
 #    && update-ca-certificates
 
 RUN apk add --no-cache ca-certificates
-RUN apk add --no-cache gnupg
+#RUN apk add --no-cache gnupg
 RUN apk add --no-cache grep
 RUN apk add --no-cache sed
 RUN apk add --no-cache tini
