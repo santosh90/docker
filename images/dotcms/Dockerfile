@@ -36,9 +36,16 @@ FROM openjdk:8-jdk-alpine
 
 WORKDIR /srv
 
-RUN apk --no-cache upgrade \
-    && apk add --no-cache bash openssl ca-certificates gnupg grep sed tini nss s6-dns go libpq git gcc musl-dev libc6-compat tomcat-native curl \
-    && update-ca-certificates
+#RUN apk --no-cache upgrade \
+#    && apk add --no-cache bash openssl ca-certificates gnupg grep sed tini nss s6-dns go libpq git gcc musl-dev libc6-compat curl \
+#    && update-ca-certificates
+
+RUN apk add --no-cache bash openssl
+RUN apk add --no-cache ca-certificates
+RUN apk add --no-cache gnupg grep sed tini nss s6-dns go libpq curl git
+RUN apk add --no-cache gcc musl-dev
+RUN apk add --no-cache libc6-compat
+RUN update-ca-certificates
 
 RUN apk add libsass --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/
 
