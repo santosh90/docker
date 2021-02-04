@@ -41,7 +41,16 @@ WORKDIR /srv
 #    && update-ca-certificates
 
 RUN apk add --no-cache ca-certificates
-RUN apk add --no-cache gnupg grep sed tini nss s6-dns go libpq curl git
+RUN apk add --no-cache gnupg
+RUN apk add --no-cache grep
+RUN apk add --no-cache sed
+RUN apk add --no-cache tini
+RUN apk add --no-cache nss
+RUN apk add --no-cache s6-dns
+RUN apk add --no-cache go
+RUN apk add --no-cache libpq
+RUN apk add --no-cache curl
+RUN apk add --no-cache git
 RUN apk add --no-cache gcc musl-dev
 RUN apk add --no-cache libc6-compat
 RUN update-ca-certificates
